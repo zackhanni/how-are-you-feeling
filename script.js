@@ -58,13 +58,11 @@ const feelingNodes = [
     },
     {
       id: 2,
-      question: "Happy! Now, let's get more specific..",
+      question: "Happy! Thats great, now, let's get more specific..",
       options: [
         {
-          text: 'Trade the goo for a sword',
-          requiredState: (currentState) => currentState.blueGoo,
-          setState: { blueGoo: false, sword: true },
-          nextFeeling: 3
+          text: 'Nevermind, go back.',
+          nextFeeling: 1
         },
         {
           text: "Playful",
