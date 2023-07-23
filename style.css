@@ -12,37 +12,53 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--darker)
-}
-
-body h1 {
-    color: var(--light);
-    text-align: center;
-    align-items: center;
-}
-
-.feelings {
+    background-color: var(--darker);
+    padding: 0;
+    margin: 0;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: var(--gray);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px;
+}
+
+#question {
+    color: var(--light);
+    /* text-align: center; */
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin-top: 20px;
     padding: 2rem 0;
 }
 
-.feeling {
-    width: 100vw;
-    border: 1px solid var(--darkest);
+.feeling-btn {
+    /* border: 1px solid var(--darkest); */
     transition: 0.3s ease;
     cursor: pointer;
-}
-
-.feeling:hover {
-    background-color: var(--darkest);
-}
-
-.feeling h3 {
-    color: var(--light);
     font-weight: 300;
     font-size: 1.5rem;
-    text-align: center;
+    background-color: var(--dark);
+    border: 3px solid var(--dark);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: var(--light);
+    outline: none;
+}
+
+.feeling-btn:hover {
+    /* background-color: var(--darkest); */
+    border-color: var(--darkest) ;
 }
