@@ -1,13 +1,9 @@
 const textElement = document.getElementById('question')
 const feelingButtonsElement = document.getElementById('feeling-buttons') 
 
-let state = {}
-
 function startDiary() {
-    state = {}
     showFeelingNode(1)
 }
-
 
 function showFeelingNode(feelingNodeIndex) {
     const feelingNode = feelingNodes.find(feelingNode => feelingNode.id === feelingNodeIndex)
@@ -17,27 +13,20 @@ function showFeelingNode(feelingNodeIndex) {
     }
 
     feelingNode.options.forEach(option => {
-        if (showOption(option)) {
             const button = document.createElement('button')
             button.innerText = option.text
             button.classList.add("btn")
             button.addEventListener('click', () => selectOption(option))
             feelingButtonsElement.appendChild(button)
-        }
+
     })
 }
-
-function showOption(option) {
-    // return option.requiredState == null || option.requiredState(state)
-    return true
- }
 
 function selectOption(option) {
     const nextFeelingNodeId = option.nextFeeling
     if (nextFeelingNodeId <= 0 ) {
         return startDiary()
     }
-    state = Object.assign(state, option.setState)
     showFeelingNode(nextFeelingNodeId)
 }
 
@@ -52,7 +41,7 @@ const feelingNodes = [
         },
         {
           text: "Sad",
-          nextFeeling: 2
+          nextFeeling: 3
         }
       ]
     },
@@ -66,14 +55,32 @@ const feelingNodes = [
         },
         {
           text: "Playful",
-          nextFeeling: 3
+          nextFeeling: 2
         },
         {
           text: "Content",
-          nextFeeling: 3
+          nextFeeling: 2
         }
       ]
     },
+    {
+        id: 3,
+        question: "Lets find a more specific description.",
+        options: [
+          {
+            text: 'Nevermind, go back.',
+            nextFeeling: 1
+          },
+          {
+            text: "Lonely",
+            nextFeeling: 3
+          },
+          {
+            text: "Vulnerable",
+            nextFeeling: 3
+          }
+        ]
+      },
 
   ]
   
