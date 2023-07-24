@@ -6,14 +6,9 @@ let node = feelingNodes[0].id - 1
 
 
 function beginFeelingsJournal() {
-    
     targetQuestion(node)
     targetFeelingButtons(node)
-    // alert("begin feelings journal has been run")
 }
-
-// find out and keep track of current feelingNodes.id should be displayed on screen
-
 
 // target id 'question' and replace innervalue with the value of feelingNodes.question
 function targetQuestion(nodeId) {
@@ -53,11 +48,8 @@ function targetFeelingButtons(z) {
         newButton.setAttribute("onclick", `onclickFunction(${feelingNodes[node].options[i].nextFeeling})`)
         newButton.setAttribute("option", `${i}`)
         feelingButtonsElement.appendChild(newButton)
-
         i++;
-
     }
 }
 
 beginFeelingsJournal();
-// alert("this is the end of the script2 page")
