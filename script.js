@@ -15,7 +15,7 @@ function showFeelingNode(feelingNodeIndex) {
     feelingNode.options.forEach(option => {
             const button = document.createElement('button')
             button.innerText = option.text
-            button.classList.add("btn")
+            button.classList.add("feeling-btn")
             button.addEventListener('click', () => selectOption(option))
             feelingButtonsElement.appendChild(button)
 
