@@ -32,14 +32,29 @@ function targetFeelingButtons(z) {
     let buttonOption = feelingButtonsElement.children[currentButton].innerHTML
     feeling = feelingNodes[0].options[0].text
 
+
+
     newButton = document.createElement("button")
     newButton.innerText = feeling
     newButton.classList.add("feeling-btn")
     feelingButtonsElement.appendChild(newButton)
 
-    alert(currentButton)    // 0
-    alert(buttonOption)    // Option 1
-    alert(feeling)        // Happy
+
+i = 0
+while (i < feelingNodes[0].options.length) {
+    newButton = document.createElement("button")
+    newButton.innerText = feeling
+    newButton.classList.add("feeling-btn")
+    feelingButtonsElement.appendChild(newButton)
+
+    i++;
+
+}
+
+
+    // alert(currentButton)    // 0
+    // alert(buttonOption)    // Option 1
+    // alert(feeling)        // Happy
 
    // document.querySelector("#feeling-buttons > button:nth-child(1)")
 
