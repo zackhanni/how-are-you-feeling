@@ -26,20 +26,29 @@ function targetQuestion(nodeId) {
 
 //create a <button> for each value stored in feelingNodes.options.text depending on current feelingNodes.id value
 function targetFeelingButtons(z) {
-    let button = feelingButtonsElement.children[0].innerHTML
-    button = feelingNodes[0].options[0].text
 
+    let currentButton = 0
 
-    alert(button)
+    let buttonOption = feelingButtonsElement.children[currentButton].innerHTML
+    feeling = feelingNodes[0].options[0].text
+
+    newButton = document.createElement("button")
+    newButton.innerText = feeling
+    newButton.classList.add("feeling-btn")
+    feelingButtonsElement.appendChild(newButton)
+
+    alert(currentButton)    // 0
+    alert(buttonOption)    // Option 1
+    alert(feeling)        // Happy
 
    // document.querySelector("#feeling-buttons > button:nth-child(1)")
 
-    
-    // document.createElement("button").classList.add("feeling-btn")
+
+
 }
 
 
-// document.createElement("button").classList.add("feeling-btn")
+
 
 
 beginFeelingsJournal();
