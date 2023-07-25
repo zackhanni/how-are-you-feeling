@@ -20,7 +20,7 @@ const feelingNodes = [
     },
     {
       id: 2,
-      question: "Happy! Thats great, now, let's get more specific..",
+      question: "You feel happy. It's wonderful to hear that. Can you be more specific?",
       options: [
         {
           text: 'Go back',
@@ -66,7 +66,7 @@ const feelingNodes = [
     },
     {
         id: 3,
-        question: "Sad. Lets find a more specific description.",
+        question: "You feel sad. Remember that it is not perminant. Let's find a more specific description.",
         options: [
           {
             text: 'Go back',
@@ -100,7 +100,7 @@ const feelingNodes = [
       },
       {
           id: 4,
-          question: "Angry. Lets find a more specific description.",
+          question: "You feel angry. Take a deep breath. Let's find a more specific description.",
           options: [
             {
               text: 'Go back',
