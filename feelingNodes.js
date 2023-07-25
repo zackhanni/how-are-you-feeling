@@ -23,7 +23,7 @@ const feelingNodes = [
       question: "Happy! Thats great, now, let's get more specific..",
       options: [
         {
-          text: 'Nevermind, go back.',
+          text: 'Go back',
           nextFeeling: 1
         },
         {
@@ -59,7 +59,7 @@ const feelingNodes = [
           nextFeeling: 20
         },
         {
-          text: "Optimistict",
+          text: "Optimistic",
           nextFeeling: 20
         }
       ]
@@ -69,7 +69,7 @@ const feelingNodes = [
         question: "Sad. Lets find a more specific description.",
         options: [
           {
-            text: 'Nevermind, go back.',
+            text: 'Go back',
             nextFeeling: 1
           },
           {
@@ -103,7 +103,7 @@ const feelingNodes = [
           question: "Angry. Lets find a more specific description.",
           options: [
             {
-              text: 'Nevermind, go back.',
+              text: 'Go back',
               nextFeeling: 1
             },
             {
@@ -145,7 +145,7 @@ const feelingNodes = [
             question: "Happy. Once I can develop this app further, there will be more information here!",
             options: [
               {
-                text: 'Nevermind, go back.',
+                text: 'Go back',
                 nextFeeling: 2
               },
               {
@@ -160,7 +160,7 @@ const feelingNodes = [
               question: "Sad. Once I can develop this app further, there will be more information here!",
               options: [
                 {
-                  text: 'Nevermind, go back.',
+                  text: 'Go back',
                   nextFeeling: 3
                 },
                 {
@@ -175,7 +175,7 @@ const feelingNodes = [
                 question: "Angry. Once I can develop this app further, there will be more information here!",
                 options: [
                   {
-                    text: 'Nevermind, go back.',
+                    text: 'Go back',
                     nextFeeling: 4
                   },
                   {
