@@ -1,5 +1,5 @@
-export const FeelingQuestion = () => {
+export const FeelingQuestion = (props) => {
     return (
-    <div id="question">This is the first question</div>
+    <div id="question">{props.question}</div>
     )
 }

@@ -1,5 +1,5 @@
-export const FeelingButton = () => { 
+export const FeelingButton = (props) => { 
     return (
-        <button className="feeling-btn">Option 1</button>
+        <button className="feeling-btn">{props.feeling}</button>
     )
 };
