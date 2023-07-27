@@ -1,28 +1,19 @@
-import { FeelingButton } from "./FeelingButton";
-import { FeelingQuestion } from "@/components/FeelingQuestion"
-import HandleClick from "./HandleClick";
-
 import FeelingNodes from "./FeelingNodes";
 
-let nodeId:Number = 1;
-const result = FeelingNodes.find(({ id }) => id === nodeId );
-const howManyOptions = result.options.length
+const FeelingSurvey = (props) => { 
 
-export const FeelingSurvey = () => { 
-
-    //{nodeId = (props.nextNode)}
-
-    // onClick={changeNode(result.options[0].nextFeeling)
+    const feelingNode = FeelingNodes.find(({ id }) => id === props.id );
 
     return (
         <div className="container">
-            <FeelingQuestion question={result.question}/> 
+            <div id="question">{feelingNode.question}</div>
             <div id="feeling-buttons" className="btn-grid">
-
-                <FeelingButton feeling={result.options[0].text} onClick={HandleClick} nextFeeling={result.options[0].nextFeeling} />
-                <FeelingButton feeling={result.options[1].text} onClick={HandleClick} nextFeeling={result.options[1].nextFeeling} />
-                <FeelingButton feeling={result.options[2].text} onClick={HandleClick} nextFeeling={result.options[2].nextFeeling} />
-                <FeelingButton feeling="other" />
+                {feelingNode?.options.map(option => 
+                    // let idValue = {option.nextFeeling};
+                    <button className="feeling-btn" id={option.nextFeeling} >
+                        {option.text}
+                    </button>
+                 )}
             </div>
         </div>
     )

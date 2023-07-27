@@ -1,19 +1,18 @@
-import FeelingContainer from "@/components/FeelingContainer";
-import FeelingSurvey from "@/components/FeelingSurvey"
-
-
-import React, { useState } from "react";
-
+import FeelingNodes from "@/components/FeelingNodes";
+import FeelingSurvey from "@/components/FeelingSurvey";
 
 export default function Home() {
 
+let currentFeelingNode = 1
+
+const feelingNode = FeelingNodes.find(({ id }) => id === currentFeelingNode );
+
+//button onCLick set currentFeelingNode to button.id value
 
   return (
     <body>
-
-            {/* <FeelingSurvey /> */}
-            <FeelingContainer id={1} />
-
+            <h1>We are in node {feelingNode?.id}</h1>
+            <FeelingSurvey id={currentFeelingNode} />
     </body>
   ) 
 }
