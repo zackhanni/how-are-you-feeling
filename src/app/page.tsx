@@ -1,3 +1,4 @@
+import FeelingContainer from "@/components/FeelingContainer";
 import FeelingSurvey from "@/components/FeelingSurvey"
 
 
@@ -10,9 +11,8 @@ export default function Home() {
   return (
     <body>
 
-
-            <FeelingSurvey />
-
+            {/* <FeelingSurvey /> */}
+            <FeelingContainer id={1} />
 
     </body>
   ) 
