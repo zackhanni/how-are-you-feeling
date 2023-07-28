@@ -1,3 +1,4 @@
+
 "use client"
 
 import React, { useState } from 'react';
@@ -6,21 +7,28 @@ import FeelingButton from './FeelingButton';
 import FeelingData from './FeelingData';
 
 const FeelingSurveyApp = () => {
+  const [questionStack, setQuestionStack] = useState<number[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
-  const [answers, setAnswers] = useState<number[]>([]);
 
+  // Feeling array
   const questions = FeelingData
 
-
   const handleAnswerClick = (nextQuestionId: number) => {
-    setAnswers([...answers, currentQuestionIndex]);
+    setQuestionStack([...questionStack, currentQuestionIndex]);
     setCurrentQuestionIndex(nextQuestionId - 1); // Minus 1 since array is 0-based
   };
 
-  const currentQuestion = questions[currentQuestionIndex];
+  const handleGoBackClick = () => {
+    const lastQuestionIndex = questionStack.pop();
+    if (lastQuestionIndex !== undefined) {
+      setCurrentQuestionIndex(lastQuestionIndex);
+    }
+  };
+
+  const currentQuestion = questions.find((q) => q.id === currentQuestionIndex + 1);
 
   // Determine if we have answered the current question already
-  const isAnswered = answers.includes(currentQuestionIndex);
+  const isAnswered = questionStack.includes(currentQuestionIndex);
 
   return (
     <div className="container">
@@ -34,8 +42,9 @@ const FeelingSurveyApp = () => {
           currentQuestion.answers.map((answer, index) => (
             <FeelingButton key={index} feeling={answer.label} onClick={() => handleAnswerClick(answer.nextQuestionId)} />
           ))}
-      </div>
 
+        {questionStack.length > 0 && <FeelingButton feeling="Go Back" onClick={handleGoBackClick} />}
+      </div>
     </div>
   );
 };

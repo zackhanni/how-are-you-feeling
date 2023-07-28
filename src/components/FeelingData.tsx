@@ -23,10 +23,6 @@ const FeelingData = [
       question: "You feel happy. It's wonderful to hear that. Can you be more specific?",
       answers: [
         {
-          label: 'Go back',
-          nextQuestionId: 1
-        },
-        {
           label: "Playful",
           nextQuestionId: 20
         },
@@ -69,10 +65,6 @@ const FeelingData = [
       question: "You feel sad. Remember that it is not perminant. Let's find a more specific description.",
       answers: [
         {
-          label: 'Go back',
-          nextQuestionId: 1
-        },
-        {
           label: "Lonely",
           nextQuestionId: 30
         },
@@ -102,10 +94,6 @@ const FeelingData = [
       id: 4,
       question: "You feel angry. Take a deep breath. Let's find a more specific description.",
       answers: [
-        {
-          label: 'Go back',
-          nextQuestionId: 1
-        },
         {
           label: "Let down",
           nextQuestionId: 40
@@ -145,12 +133,8 @@ const FeelingData = [
       question: "Happy. Once I can develop this app further, there will be more information here!",
       answers: [
         {
-          label: 'Go back',
-          nextQuestionId: 2
-        },
-        {
           label: "Restart",
-          nextQuestionId: 1
+          nextQuestionId: -1
         }
 
       ]
@@ -160,12 +144,8 @@ const FeelingData = [
       question: "Sad. Once I can develop this app further, there will be more information here!",
       answers: [
         {
-          label: 'Go back',
-          nextQuestionId: 3
-        },
-        {
           label: "Restart",
-          nextQuestionId: 1
+          nextQuestionId: -1
         }
 
       ]
@@ -175,12 +155,8 @@ const FeelingData = [
       question: "Angry. Once I can develop this app further, there will be more information here!",
       answers: [
         {
-          label: 'Go back',
-          nextQuestionId: 4
-        },
-        {
           label: "Restart",
-          nextQuestionId: 1
+          nextQuestionId: -1
         }
 
       ]
