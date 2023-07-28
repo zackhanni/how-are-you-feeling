@@ -7,16 +7,22 @@ import FeelingButton from './FeelingButton';
 import FeelingData from './FeelingData';
 
 const FeelingSurveyApp = () => {
-  const [questionStack, setQuestionStack] = useState<number[]>([]);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
+  const [questionStack, setQuestionStack] = useState([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   // Feeling array
   const questions = FeelingData
 
   const handleAnswerClick = (nextQuestionId: number) => {
-    setQuestionStack([...questionStack, currentQuestionIndex]);
-    setCurrentQuestionIndex(nextQuestionId - 1); // Minus 1 since array is 0-based
-  };
+    if (nextQuestionId < 0) {
+      // If nextQuestionId is negative, restart questions
+      setQuestionStack([]);
+      setCurrentQuestionIndex(0);
+    } else {
+      setQuestionStack([...questionStack, currentQuestionIndex]);
+      setCurrentQuestionIndex(nextQuestionId - 1); // Minus 1 since array is 0-based
+    };
+  }
 
   const handleGoBackClick = () => {
     const lastQuestionIndex = questionStack.pop();
