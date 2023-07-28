@@ -1,5 +1,5 @@
 const FeelingQuestion = ({ question }) => {
-  return <h1>{question}</h1>;
+  return <h3>{question}</h3>;
 };
 
 export default FeelingQuestion;
