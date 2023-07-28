@@ -10,7 +10,7 @@ const FeelingSurveyApp = () => {
   const [questionStack, setQuestionStack] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
-  // Feeling array
+  // Feeling Q&A and id array
   const questions = FeelingData
 
   const handleAnswerClick = (nextQuestionId: number) => {
@@ -24,13 +24,16 @@ const FeelingSurveyApp = () => {
     };
   }
 
+
+
+
   const handleGoBackClick = () => {
     const lastQuestionIndex = questionStack.pop();
     if (lastQuestionIndex !== undefined) {
       setCurrentQuestionIndex(lastQuestionIndex);
     }
   };
-
+  // i dont understand why +1 is needed. the id values are set values and not indexed in the array. id=30 is not array[29]
   const currentQuestion = questions.find((q) => q.id === currentQuestionIndex + 1);
 
   // Determine if we have answered the current question already
