@@ -114,4 +114,12 @@ body {
     .feeling-btn {
         padding: 20px 5px;
     }
+
+    
+    /* on mobile, after clicking it looks like somehting else is trying to automatically click again and is causing things to look weird. this code below is only a temporary fix */
+    .feeling-btn:hover, .feeling-btn:active {
+        background-color: var(--btn-color);
+        border: 3px solid var(--btn-color-border);
+        color: var(--text-color);
+    }
 }
