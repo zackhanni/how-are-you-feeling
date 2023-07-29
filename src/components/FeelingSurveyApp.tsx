@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState } from 'react';
@@ -13,6 +12,25 @@ const FeelingSurveyApp = () => {
   // Feeling Q&A and id array
   const questions = FeelingData
 
+  // function colorChange() {
+
+  //   if (currentQuestionIndex === 1) {
+  //     // do nothing
+  //     alert("its 1")
+  //   } else if (currentQuestionIndex > 1 && currentQuestionIndex > 10) {
+  //     // change colors 1
+  //     { bg: '#FFF2CC', text: '#333' }
+  //     alert("its 1-10")
+  //   } else if (currentQuestionIndex > 10 && currentQuestionIndex > 100) {
+  //     // change colors 2
+  //     { bg: '#FFF2CC', text: '#333' }
+  //     alert("its 10-100")
+  //   } else if (currentQuestionIndex > 100 && currentQuestionIndex > 1000) {
+  //     // change color 3
+  //   }
+  // }
+
+
   const handleAnswerClick = (nextQuestionId: number) => {
     if (nextQuestionId < 0) {
       // If nextQuestionId is negative, restart questions
@@ -23,9 +41,6 @@ const FeelingSurveyApp = () => {
       setCurrentQuestionIndex(nextQuestionId - 1); // Minus 1 since array is 0-based
     };
   }
-
-
-
 
   const handleGoBackClick = () => {
     const lastQuestionIndex = questionStack.pop();
@@ -40,21 +55,22 @@ const FeelingSurveyApp = () => {
   const isAnswered = questionStack.includes(currentQuestionIndex);
 
   return (
-    <div className="container">
+      <div className="container" >
 
-      <div id="question">
-        {!isAnswered && <FeelingQuestion question={currentQuestion.question} />}
+        <div id="question">
+          {currentQuestion && !isAnswered && <FeelingQuestion question={currentQuestion.question} />}
+        </div>
+
+        <div id="feeling-buttons" className="btn-grid">
+          {currentQuestion && !isAnswered &&
+            currentQuestion.answers.map((answer, index) => (
+              <FeelingButton key={index} feeling={answer.label} onClick={() => handleAnswerClick(answer.nextQuestionId)} />
+            ))}
+
+          {questionStack.length > 0 && <FeelingButton feeling="Go Back" onClick={handleGoBackClick} />}
+
+        </div>
       </div>
-
-      <div id="feeling-buttons" className="btn-grid">
-        {!isAnswered &&
-          currentQuestion.answers.map((answer, index) => (
-            <FeelingButton key={index} feeling={answer.label} onClick={() => handleAnswerClick(answer.nextQuestionId)} />
-          ))}
-
-        {questionStack.length > 0 && <FeelingButton feeling="Go Back" onClick={handleGoBackClick} />}
-      </div>
-    </div>
   );
 };
 

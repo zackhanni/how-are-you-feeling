@@ -22,6 +22,27 @@
     --btn-color-border: #111827;
 }
 
+/* Change background colors besed on what question layer */
+.FeelingQuestion:nth-child(2n) {
+    --body-bg: #fff;
+    --container-bg: #FFF2CC;
+    --text-color: #111827;
+    --text-hv-color: #111827;
+    --btn-color: #fff;
+    --btn-hv-color: #c27ba0;
+    --btn-color-border: #111827;
+}
+  
+.FeelingQuestion:nth-child(3n) {
+    --body-bg: #FFF2CC;
+    --container-bg: #ffe599;
+    --text-color: #111827;
+    --text-hv-color: #111827;
+    --btn-color: #c27ba0;
+    --btn-hv-color: #b4a7d6;
+    --btn-color-border: #c27ba0;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--body-bg);
@@ -32,7 +53,8 @@ body {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    transition: 0.5s ease;
+    /* transition: 0.5s ease; */
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .container {
@@ -92,27 +114,4 @@ body {
     .feeling-btn {
         padding: 20px 5px;
     }
-}
-
-/* Change background colors besed on what question layer */
-
-  
-.FeelingQuestion:nth-child(2n) {
-    --body-bg: #fff;
-    --container-bg: #FFF2CC;
-    --text-color: #111827;
-    --text-hv-color: #111827;
-    --btn-color: #fff;
-    --btn-hv-color: #c27ba0;
-    --btn-color-border: #111827;
-}
-  
-.FeelingQuestion:nth-child(3n) {
-    --body-bg: #FFF2CC;
-    --container-bg: #ffe599;
-    --text-color: #111827;
-    --text-hv-color: #111827;
-    --btn-color: #c27ba0;
-    --btn-hv-color: #b4a7d6;
-    --btn-color-border: #c27ba0;
 }
