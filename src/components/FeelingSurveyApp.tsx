@@ -1,13 +1,13 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import FeelingQuestion from './FeelingQuestion';
 import FeelingButton from './FeelingButton';
 import FeelingData from './FeelingData';
 
 const FeelingSurveyApp = () => {
-  const [questionStack, setQuestionStack] = useState([]);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [questionStack, setQuestionStack] = useState<number[]>([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
 
   // Feeling Q&A and id array
   const questions = FeelingData

@@ -1,4 +1,10 @@
-const FeelingButton = ({feeling, onClick }) => {
+type FeelingButton = {
+    feeling: string;
+    onClick: () => void;
+  };
+
+
+const FeelingButton: React.FC<FeelingButton> = ({feeling, onClick }) => {
     return (
         <button 
             className="feeling-btn"
