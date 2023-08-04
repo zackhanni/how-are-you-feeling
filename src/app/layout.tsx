@@ -8,17 +8,41 @@ export const metadata: Metadata = {
   description: 'Lean about your emotions and how to better express your feelings.',
 }
 
+type RootLayoutProps = {
+  children: React.ReactNode;
+  Component: any;
+  pageProps: {
+    session: any;
+  };
+};
+
+
+
 export default function RootLayout({ 
-  
-  children, }: { children: React.ReactNode }) 
-  
+  // og code
+  // children, }: { children: React.ReactNode }) 
+
+  children, Component, pageProps }: RootLayoutProps)  
+
+  //new code to add
+  // Component, pageProps: { session, ...pageProps } }) 
+
+
   {
   return (
+    <SessionProvider session={pageProps.session}>
+
     <html lang="en">
 
-      <body>  
+
+    
+
+      <body>
+        <Component {...pageProps} />
         {children}
       </body>
     </html>
+
+    </SessionProvider>
   )
 }
